@@ -1,0 +1,29 @@
+<h1>Weapons shop</h1>
+
+<% @categories.each do |category| %>
+<h2><%= category.name %></h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% category.products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% end %>
+
+
+<p><%= link_to "Products", products_path %></p>
+<p><%= link_to "Categories", categories_path %></p>
